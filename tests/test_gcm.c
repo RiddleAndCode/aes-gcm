@@ -322,3 +322,9 @@ void test_gcm(void) {
 }
 
 
+int main(void) {
+
+  UNITY_BEGIN();
+  RUN_TEST(test_gcm);
+  return UNITY_END();
+}
