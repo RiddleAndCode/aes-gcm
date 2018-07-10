@@ -84,13 +84,13 @@ static void rijndaelEncrypt(const u32 rk[], u32 Nr, const u8 pt[16],
    * apply last round and
    * map cipher state to byte array block:
    */
-  s0 = TE41(t0) ^ (u32)TE42(t1) ^ (u32)TE43(t2) ^ (u32)TE44(t3) ^ rk[0];
+  s0 = TE41(t0) ^ TE42(t1) ^ TE43(t2) ^ TE44(t3) ^ rk[0];
   PUTU32(ct, s0);
-  s1 = (u32)TE41(t1) ^ (u32)TE42(t2) ^ (u32)TE43(t3) ^ (u32)TE44(t0) ^ rk[1];
+  s1 = TE41(t1) ^ TE42(t2) ^ TE43(t3) ^ TE44(t0) ^ rk[1];
   PUTU32(ct + 4, s1);
-  s2 = (u32)TE41(t2) ^ (u32)TE42(t3) ^ (u32)TE43(t0) ^ (u32)TE44(t1) ^ rk[2];
+  s2 = TE41(t2) ^ TE42(t3) ^ TE43(t0) ^ TE44(t1) ^ rk[2];
   PUTU32(ct + 8, s2);
-  s3 = (u32)TE41(t3) ^ (u32)TE42(t0) ^ (u32)TE43(t1) ^ (u32)TE44(t2) ^ rk[3];
+  s3 = TE41(t3) ^ TE42(t0) ^ TE43(t1) ^ TE44(t2) ^ rk[3];
   PUTU32(ct + 12, s3);
 }
 
